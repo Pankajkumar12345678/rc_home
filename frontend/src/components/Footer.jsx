@@ -7,6 +7,7 @@ import {
   Wifi, Users, Clock, ArrowUpRight,
   Star
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -215,8 +216,9 @@ const Footer = () => {
                         <span className="text-sm">{item}</span>
                       </div>
                     ) : item.path ? (
-                      <a
-                        href={item.path}
+                      <Link
+                        key={item.name}
+                        to={item.path}
                         className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
                       >
                         <div className={`transition-transform ${activeLink === `${category}-${idx}` ? 'scale-110' : ''}`}>
@@ -224,7 +226,7 @@ const Footer = () => {
                         </div>
                         <span className="text-sm">{item.name}</span>
                         <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity ml-auto" />
-                      </a>
+                      </Link>
                     ) : (
                       <a
                         href={item.link || '#'}
