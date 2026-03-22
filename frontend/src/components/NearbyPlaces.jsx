@@ -18,18 +18,103 @@ import {
     Car,
     Bike,
     Footprints,
-    AlertCircle
+    AlertCircle,
+    Train,
+    Plane,
+    Building2,
+    Film,
 } from 'lucide-react';
 
 const NearbyPlaces = () => {
     const [selectedPlace, setSelectedPlace] = useState(null);
     const [mapLoaded, setMapLoaded] = useState(false);
 
+    const PG_LOCATION = {
+        lat: 26.8476033,
+        lng: 75.7872892
+    };
+
+    // ✅ Distance function
+    const getDistance = (lat1, lon1, lat2, lon2) => {
+        const R = 6371;
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+
+        const a =
+            Math.sin(dLat / 2) ** 2 +
+            Math.cos(lat1 * Math.PI / 180) *
+            Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) ** 2;
+
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const km = R * c;
+
+        return km < 1
+            ? Math.round(km * 1000) + " m"
+            : km.toFixed(2) + " km";
+    };
+
+    // ✅ ICON FIX (NAME BASED)
+    const getIcon = (name) => {
+        const n = name.toLowerCase();
+
+        // 🎓 Education
+        if (n.includes("institute") || n.includes("college") || n.includes("school")) {
+            return <GraduationCap size={24} />;
+        }
+
+        // 🏥 Hospital
+        if (n.includes("hospital")) {
+            return <Hospital size={24} />;
+        }
+
+        // 🛍 Mall / Shopping
+        if (n.includes("park") || n.includes("mall") || n.includes("center") || n.includes("centre")) {
+            return <ShoppingBag size={24} />;
+        }
+
+        // 🎬 Cinema / INOX
+        if (n.includes("inox") || n.includes("cinema") || n.includes("movie")) {
+            return <Film size={24} />;
+        }
+
+        // 🚌 Bus Stand
+        if (n.includes("bus")) {
+            return <Bus size={24} />;
+        }
+
+        // ☕ Cafe
+        if (n.includes("coffee") || n.includes("cafe")) {
+            return <Coffee size={24} />;
+        }
+
+        // 🚆 Railway
+        if (n.includes("railway") || n.includes("station")) {
+            return <Train size={24} />;
+        }
+
+        // ✈ Airport
+        if (n.includes("airport")) {
+            return <Plane size={24} />;
+        }
+
+        // 🏨 Hotel
+        if (n.includes("hotel") || n.includes("marriott")) {
+            return <Building2 size={24} />;
+        }
+
+        // 📍 Tourist / Gate / Landmark
+        if (n.includes("gate") || n.includes("arts") || n.includes("place")) {
+            return <MapPin size={24} />;
+        }
+
+        // Default
+        return <Landmark size={24} />;
+    };
+
     const places = [
         {
-            icon: <GraduationCap size={24} />,
-            name: "Rajasthan University",
-            distance: "2.5 km",
+            name: "World Trade Park Jaipur Rajasthan",
             time: "10 min",
             color: "from-blue-500 to-cyan-500",
             bgColor: "bg-blue-50",
@@ -40,35 +125,29 @@ const NearbyPlaces = () => {
             lng: 75.7873
         },
         {
-            icon: <Hospital size={24} />,
-            name: "SMS Hospital",
-            distance: "3 km",
+            name: "INOX G.T. Central Jaipur Rajasthan",
             time: "12 min",
             color: "from-red-500 to-pink-500",
             bgColor: "bg-red-50",
             borderColor: "border-red-200",
             direction: "South",
-            transport: ["Bus", "Auto", "Ambulance"],
-            lat: 26.9239,
-            lng: 75.8245
+            transport: ["Bus", "Auto", "Cab"],
+            lat: 26.9116,
+            lng: 75.8019
         },
         {
-            icon: <ShoppingBag size={24} />,
-            name: "Durgapura Market",
-            distance: "500 m",
-            time: "2 min",
+            name: "Jaipur Center",
+            time: "3 min",
             color: "from-purple-500 to-violet-500",
             bgColor: "bg-purple-50",
             borderColor: "border-purple-200",
             direction: "Walking",
-            transport: ["Walk", "Auto", "Rickshaw"],
-            lat: 26.9021,
-            lng: 75.7934
+            transport: ["Walk", "Auto"],
+            lat: 26.8995,
+            lng: 75.7925
         },
         {
-            icon: <Bus size={24} />,
-            name: "Bus Stand",
-            distance: "1 km",
+            name: "Durgapura Bus Stand",
             time: "4 min",
             color: "from-green-500 to-emerald-500",
             bgColor: "bg-green-50",
@@ -79,32 +158,103 @@ const NearbyPlaces = () => {
             lng: 75.7889
         },
         {
-            icon: <Coffee size={24} />,
-            name: "Cafes & Restaurants",
-            distance: "600 m",
+            name: "Haif Light Coffee Roasters",
             time: "3 min",
             color: "from-orange-500 to-amber-500",
             bgColor: "bg-orange-50",
             borderColor: "border-orange-200",
             direction: "South-West",
-            transport: ["Walk", "Auto", "Zomato/Swiggy"],
+            transport: ["Walk", "Auto"],
             lat: 26.9012,
             lng: 75.7912
         },
         {
-            icon: <Landmark size={24} />,
-            name: "Bank & ATM",
-            distance: "400 m",
-            time: "2 min",
+            name: "Durgapura Railway Station",
+            time: "5 min",
             color: "from-indigo-500 to-blue-500",
             bgColor: "bg-indigo-50",
             borderColor: "border-indigo-200",
             direction: "North",
-            transport: ["Walk", "ATM", "Bank"],
+            transport: ["Walk", "Train"],
             lat: 26.9034,
             lng: 75.7921
+        },
+        {
+            name: "Jaipur International Airport",
+            time: "8 min",
+            color: "from-indigo-500 to-blue-500",
+            bgColor: "bg-indigo-50",
+            borderColor: "border-indigo-200",
+            direction: "South",
+            transport: ["Cab", "Auto"],
+            lat: 26.8242,
+            lng: 75.8122
+        },
+        {
+            name: "Manglam Arts",
+            time: "6 min",
+            color: "from-indigo-500 to-blue-500",
+            bgColor: "bg-indigo-50",
+            borderColor: "border-indigo-200",
+            direction: "North",
+            transport: ["Auto"],
+            lat: 26.8782,
+            lng: 75.8045
+        },
+        {
+            name: "Patrika Gate Jaipur",
+            time: "6 min",
+            color: "from-indigo-500 to-blue-500",
+            bgColor: "bg-indigo-50",
+            borderColor: "border-indigo-200",
+            direction: "North",
+            transport: ["Auto", "Walk"],
+            lat: 26.8773,
+            lng: 75.8067
+        },
+        {
+            name: "International Institute of Hotel Management",
+            time: "6 min",
+            color: "from-indigo-500 to-blue-500",
+            bgColor: "bg-indigo-50",
+            borderColor: "border-indigo-200",
+            direction: "North",
+            transport: ["Auto"],
+            lat: 26.8785,
+            lng: 75.8050
+        },
+        {
+            name: "Rajasthan Hospital Limited",
+            time: "7 min",
+            color: "from-red-500 to-pink-500",
+            bgColor: "bg-red-50",
+            borderColor: "border-red-200",
+            direction: "North",
+            transport: ["Ambulance", "Auto"],
+            lat: 26.9027,
+            lng: 75.8034
+        },
+        {
+            name: "Jaipur Marriott Hotel",
+            time: "5 min",
+            color: "from-indigo-500 to-blue-500",
+            bgColor: "bg-indigo-50",
+            borderColor: "border-indigo-200",
+            direction: "North",
+            transport: ["Cab"],
+            lat: 26.8575,
+            lng: 75.8055
         }
-    ];
+    ].map(place => ({
+        ...place,
+        icon: getIcon(place.name),
+        distance: getDistance(
+            PG_LOCATION.lat,
+            PG_LOCATION.lng,
+            place.lat,
+            place.lng
+        )
+    }));
 
     // PG Location (from your Google Maps link)
     const pgLocation = {

@@ -384,7 +384,7 @@ const Facilities = () => {
                 <div className="text-sm text-gray-500 mb-4">per meal</div>
                 
                 <motion.a
-                  href='https://wa.me/916377964494' 
+                  href="https://wa.me/916377964494?text=Hi,%20I'm%20interested%20in%20booking%20a%20room%20at%20Rc%20Homes%20PG%20For%20Girls.%20Please%20share%20more%20details."
                   target='_blank'
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -410,7 +410,7 @@ const Facilities = () => {
           className="text-center mt-12"
         >
           <a 
-            href='https://wa.me/916377964494' 
+            href="https://wa.me/916377964494?text=Hi,%20I'm%20interested%20in%20booking%20a%20room%20at%20Rc%20Homes%20PG%20For%20Girls.%20Please%20share%20more%20details."
             target='_blank'
             className="relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
           >

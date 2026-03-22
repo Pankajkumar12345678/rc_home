@@ -13,7 +13,7 @@ import {
   Mail
 } from 'lucide-react';
 
-import logo from '../assets/hero/rc_logo.png';
+import logo from '../assets/hero/logo2-removebg-preview.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ const Header = () => {
 
   // WhatsApp number (formatted for URL)
   const whatsappNumber = '916377964494'; // Without + sign
-  const whatsappMessage = encodeURIComponent("Hi! I'm interested in booking a room at RC HOMES.");
+  const whatsappMessage = encodeURIComponent("Hi, I'm interested in booking a room at Rc Homes PG For Girls. Please share more details.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   // Update active menu based on route
@@ -134,7 +134,7 @@ const Header = () => {
               <img
                 src={logo}
                 alt="RC HOMES Logo"
-                className="w-[300px] h-[80px] object-cover"
+                className="w-[150px] h-[80px] object-cover"
               />
             </div>
 

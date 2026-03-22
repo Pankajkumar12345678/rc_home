@@ -260,54 +260,7 @@ const Footer = () => {
               <div className="w-2 h-6 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full" />
               Stay Updated
             </h3>
-            
-            <p className="text-gray-300 text-sm">
-              Subscribe to get updates about new rooms, offers, and special announcements.
-            </p>
-            
-            {/* Subscription Form */}
-            <form onSubmit={handleSubscribe} className="space-y-4">
-              <div className="relative">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email address"
-                  className="w-full px-4 py-3 bg-white/5 border border-gray-700 rounded-xl focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500/50 transition-all placeholder-gray-500"
-                  required
-                />
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="absolute right-2 top-2 px-4 py-1.5 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg font-medium text-sm"
-                >
-                  Subscribe
-                </motion.button>
-              </div>
-              
-              {/* Subscription Success Message */}
-              <AnimatePresence>
-                {isSubscribed && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="bg-green-500/10 border border-green-500/30 rounded-xl p-3"
-                  >
-                    <div className="flex items-center gap-2 text-green-400">
-                      <Heart size={16} />
-                      <span className="text-sm">Thank you for subscribing!</span>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              
-              <p className="text-xs text-gray-500">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </form>
-
+          
             {/* Social Links */}
             <div className="space-y-4">
               <p className="text-sm text-gray-300">Follow us on social media</p>
@@ -361,7 +314,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             {/* WhatsApp Quick Action */}
             <motion.a
-              href="https://wa.me/916377964494"
+              href="https://wa.me/916377964494?text=Hi,%20I'm%20interested%20in%20booking%20a%20room%20at%20Rc%20Homes%20PG%20For%20Girls.%20Please%20share%20more%20details."
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -410,7 +363,7 @@ const Footer = () => {
 
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/916377964494"
+        href="https://wa.me/916377964494?text=Hi,%20I'm%20interested%20in%20booking%20a%20room%20at%20Rc%20Homes%20PG%20For%20Girls.%20Please%20share%20more%20details."
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0, opacity: 0 }}

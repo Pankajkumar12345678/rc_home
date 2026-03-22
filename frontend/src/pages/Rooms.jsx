@@ -222,7 +222,7 @@ const Rooms = () => {
                 {/* CTA Button */}
                 {/* CTA Button - Simple Elegant */}
                 <a
-                  href='https://wa.me/916377964494'
+                  href="https://wa.me/916377964494?text=Hi,%20I'm%20interested%20in%20booking%20a%20room%20at%20Rc%20Homes%20PG%20For%20Girls.%20Please%20share%20more%20details."
                   target='_blank'
                   rel="noopener noreferrer"
                   className="relative w-full py-4 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 group block text-center overflow-hidden"

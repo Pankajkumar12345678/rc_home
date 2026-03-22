@@ -373,7 +373,7 @@ const Testimonials = () => {
                     className="text-center mt-8"
                 >
                     <a
-                        href="https://wa.me/916377964494"
+                        href="https://wa.me/916377964494?text=Hi,%20I'm%20interested%20in%20booking%20a%20room%20at%20Rc%20Homes%20PG%20For%20Girls.%20Please%20share%20more%20details."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"

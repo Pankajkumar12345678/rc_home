@@ -52,7 +52,7 @@ const Hero = () => {
 
   // Stats - Simple display
   const stats = [
-    { value: '50+', label: 'Happy Girls' },
+    { value: '200+', label: 'Happy Girls' },
     { value: '4.8★', label: 'Rating' },
     { value: '100%', label: 'Safe' },
     { value: '24/7', label: 'Support' },
@@ -103,12 +103,12 @@ const Hero = () => {
               {/* Left Side - Hero Content */}
               <div className="space-y-8">
                 {/* Location Tag */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
                   <MapPin size={16} className="text-white" />
                   <span className="text-sm font-medium text-white">
                     behind Dalda Factory, Durgapura, Jaipur, Rajasthan 302018
                   </span>
-                </div>
+                </div> */}
 
                 {/* Main Heading - Simplified */}
                 <div className="space-y-4">
@@ -159,7 +159,7 @@ const Hero = () => {
                 {/* CTA Buttons - Clean */}
                 <div className="flex flex-wrap gap-4 pt-4">
                   <a
-                    href="https://wa.me/916377964494"
+                    href="https://wa.me/916377964494?text=Hi,%20I'm%20interested%20in%20booking%20a%20room%20at%20Rc%20Homes%20PG%20For%20Girls.%20Please%20share%20more%20details."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold transition-all hover:scale-105 hover:shadow-lg"
@@ -177,7 +177,7 @@ const Hero = () => {
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                   </Link> */}
                   <a
-                    href="https://wa.me/916377964494"
+                    href="https://wa.me/916377964494?text=Hi,%20I'm%20interested%20in%20booking%20a%20room%20at%20Rc%20Homes%20PG%20For%20Girls.%20Please%20share%20more%20details."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-3 px-6 py-3 rounded-full bg-white text-gray-800 font-semibold border-2 border-emerald-500 transition-all hover:scale-105"
