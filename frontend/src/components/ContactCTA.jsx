@@ -189,7 +189,7 @@ const ContactCTA = () => {
                 <Heart size={16} className="text-white fill-white" />
                 <span className="text-sm font-semibold text-white">Limited Rooms Available</span>
                 <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full animate-pulse">
-                  3 left
+                  4 left
                 </span>
               </div>
               

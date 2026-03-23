@@ -88,10 +88,10 @@ const Contact = () => {
   ];
 
   const faqs = [
-    // {
-    //   question: 'What are the check-in and check-out timings?',
-    //   answer: 'Check-in time is 8:00 PM and check-out time is 7:00 AM. Early check-in and late check-out can be arranged upon request.'
-    // },
+    {
+      question: 'What are the check-in and check-out timings?',
+      answer: 'Check-in time is 6:00 AM and check-out time is 11:00 PM. Early check-in and late check-out can be arranged upon request.'
+    },
     {
       question: 'Is there 24/7 security?',
       answer: 'Absolutely! We have CCTV surveillance, security guards, and biometric access for residents safety.'

@@ -113,11 +113,11 @@ const Hero = () => {
                 {/* Main Heading - Simplified */}
                 <div className="space-y-4">
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                    RC Home Safe & Comfortable
+                    RC Homes PG for Girls
                   </h1>
                   <div className="space-y-2">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-300 to-purple-300">
-                      PG for Girls
+                      Safe & Comfortable
                     </h2>
                     <p className="text-lg md:text-xl text-white/90 max-w-lg">
                       Your perfect home away from home in Jaipur

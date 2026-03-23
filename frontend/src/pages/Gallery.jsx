@@ -33,8 +33,8 @@ const Gallery = () => {
     'https://images.jdmagicbox.com/v2/comp/jaipur/s2/0141px141.x141.231204135523.h8s2/catalogue/rc-homes-girls-pg-tonk-road-jaipur-paying-guest-accommodations-for-girl-student-rfbmqncohg.jpg',
     'https://images.jdmagicbox.com/v2/comp/jaipur/s2/0141px141.x141.231204135523.h8s2/catalogue/rc-homes-girls-pg-tonk-road-jaipur-paying-guest-accommodations-for-girl-student-gs5k7a8dng.jpg',
     'https://images.jdmagicbox.com/v2/comp/jaipur/s2/0141px141.x141.231204135523.h8s2/catalogue/rc-homes-girls-pg-tonk-road-jaipur-paying-guest-accommodations-for-girl-student-339nk259qo.jpg',
-    'https://images.jdmagicbox.com/comp/jaipur/s2/0141px141.x141.231204135523.h8s2/catalogue/0wkfos96qemzrfvjvhgwpljc07k3yxzy-gzqayqhb4c.jpg',
-    'https://images.jdmagicbox.com/v2/comp/jaipur/e6/0141px141.x141.231204134306.f9e6/catalogue/rc-homes-girls-pg-durgapura-jaipur-hostels-u4vnfrdkls.jpg',
+    // 'https://images.jdmagicbox.com/comp/jaipur/s2/0141px141.x141.231204135523.h8s2/catalogue/0wkfos96qemzrfvjvhgwpljc07k3yxzy-gzqayqhb4c.jpg',
+    // 'https://images.jdmagicbox.com/v2/comp/jaipur/e6/0141px141.x141.231204134306.f9e6/catalogue/rc-homes-girls-pg-durgapura-jaipur-hostels-u4vnfrdkls.jpg',
     ];
 
   const tripal = [
